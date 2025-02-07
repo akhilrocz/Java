@@ -1,22 +1,25 @@
+
 abstract class Animal {
 
-  abstract void sound();
+  public abstract void makeSound();
 
-  void sleep() {
-    System.out.println("Animal sleeps");
+  public void sound() {
+    System.out.println("wee");
   }
 }
 
-class Dog extends Animal {
-  void sound() {
-    System.out.println("bark");
+class Pig extends Animal {
+
+  public void makeSound() {
+    System.out.println("Pig says hello");
   }
 }
 
 public class Abstraction {
+
   public static void main(String[] args) {
-    Animal dog = new Dog();
-    dog.sound();
-    dog.sleep();
+    Pig pig = new Pig();
+    pig.makeSound();
+    pig.sound();
   }
 }
