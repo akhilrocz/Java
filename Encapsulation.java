@@ -1,26 +1,41 @@
-class Account{
-    private double balance;
-    public double getBalance(){
-        return balance;
+
+class Person {
+    private String name;
+    private int age;
+
+    public Person(String name, int age) {
+        this.name = name;
+        this.age = age;
     }
-    public void withdraw(double amount){
-        if(amount>=0 && amount<=balance){
-            balance-=amount;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        if (age >= 0) {
+            this.age = age;
+        } else {
+            System.out.println("Invalid age");
         }
     }
-    public void deposit(double amount){
-        if(amount>0){
-            balance+=amount;
-        }
-    }
+
 }
 
 public class Encapsulation {
     public static void main(String[] args) {
-        Account account = new Account();
-        account.deposit(1000);
-        System.out.println(account.getBalance());
-        account.withdraw(300);
-        System.out.println(account.getBalance());
+        Person person = new Person("Akhil", 21);
+        System.out.println(person.getName());
+        System.out.println(person.getAge());
+        person.setAge(25);
+        person.setName("Nikhil");
     }
 }
